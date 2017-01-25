@@ -14,7 +14,7 @@ public class RobotTest {
         robot.move("MML");
         Assert.assertEquals("Space X should be equal to 0.", 0 ,robot.getPosition().getSpaceX());
         Assert.assertEquals("Space Y should be equal to 2.", 2 ,robot.getPosition().getSpaceY());
-        Assert.assertEquals("Orientation should be equal to W.", Orientation.WEST ,robot.getPosition().getOrientation());
+        Assert.assertEquals("Orientation should be equal to WEST.", Orientation.WEST ,robot.getPosition().getOrientation());
     }
 
     @Test
@@ -23,6 +23,6 @@ public class RobotTest {
         robot.move("MMR");
         Assert.assertEquals("Space X should be equal to 0.", 0 ,robot.getPosition().getSpaceX());
         Assert.assertEquals("Space Y should be equal to 2.", 2 ,robot.getPosition().getSpaceY());
-        Assert.assertEquals("Orientation should be equal to W.", Orientation.EAST ,robot.getPosition().getOrientation());
+        Assert.assertEquals("Orientation should be equal to EAST.", Orientation.EAST ,robot.getPosition().getOrientation());
     }
 }

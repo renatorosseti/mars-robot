@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController(value = "mars")
-public class SpaceController {
+public class MarsController {
 }
