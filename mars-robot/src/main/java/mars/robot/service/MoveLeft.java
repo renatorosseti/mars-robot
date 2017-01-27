@@ -1,25 +1,30 @@
-package mars.robot.entity;
+package mars.robot.service;
+
+import mars.robot.entity.Space;
+import org.springframework.stereotype.Service;
+
 import static mars.robot.entity.Orientation.*;
+
 /**
  * Created by Renato Rosseti on 25/01/17.
  */
-
-public class MoveRight implements Motion {
+@Service
+public class MoveLeft implements Motion {
 
     @Override
     public void move(Space position) {
         switch (position.getOrientation()) {
             case NORTH:
-                position.setOrientation(EAST);
-                break;
-            case SOUTH:
                 position.setOrientation(WEST);
                 break;
+            case SOUTH:
+                position.setOrientation(EAST);
+                break;
             case EAST:
-                position.setOrientation(SOUTH);
+                position.setOrientation(NORTH);
                 break;
             case WEST:
-                position.setOrientation(NORTH);
+                position.setOrientation(SOUTH);
                 break;
         }
     }

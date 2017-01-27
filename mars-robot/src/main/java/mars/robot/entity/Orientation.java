@@ -14,4 +14,8 @@ public enum Orientation {
     Orientation(String acronym) {
         this.acronym = acronym;
     }
+
+    public String getAcronym() {
+        return acronym;
+    }
 }

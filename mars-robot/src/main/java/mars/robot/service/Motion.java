@@ -1,4 +1,6 @@
-package mars.robot.entity;
+package mars.robot.service;
+
+import mars.robot.entity.Space;
 
 /**
  * Created by Renato Rosseti on 25/01/17.
