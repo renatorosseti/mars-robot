@@ -46,7 +46,7 @@ public class Robot {
                 rotateRight.move(position);
             }
         }
-        return position.getFinalPositionText();
+        return position.getFinalPositionResponse();
     }
 
     public Space getPosition() {

@@ -26,7 +26,7 @@ public class Space {
         setOrientation(NORTH);
     }
 
-    public String getFinalPositionText() {
+    public String getFinalPositionResponse() {
         return  "(" + coordinateX +", "+ coordinateY +", " + orientation.getAcronym()+")";
     }
 

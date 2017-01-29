@@ -74,7 +74,7 @@ public class MarsControllerTest {
     }
 
     @Test
-    public void motionRobotSucceed_whenRobotRotatesToRightToBeBackToTheInitialPosition() throws Exception {
+    public void motionRobotSucceed_whenRobotMovesRightAlongTheLimitedBordersToTheTheInitialPosition() throws Exception {
         MvcResult result = mockMvc.perform(post("/rest/mars/MMMMRMMMMRMMMMRMMMMR")
                 .content("")
                 .contentType(contentType))
