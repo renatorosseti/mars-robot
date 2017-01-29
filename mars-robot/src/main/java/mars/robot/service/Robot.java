@@ -23,17 +23,17 @@ public class Robot {
     @Autowired
     private MoveForward moveForward;
 
-    private final String REGEX_RULE = "[MRL]+";
+    private final String VALID_COMMANDS_RULE = "[MRL]+";
 
     public Robot() {
     }
 
-    public String move(String inputMotion) throws RobotException {
-        if (!inputMotion.matches(REGEX_RULE)) {
+    public String move(String inputCommand) throws RobotException {
+        if (!hasOnlyValidCommands(inputCommand)) {
             throw new RobotException("400 Bad Request");
         }
         position.init();
-        String[] moves = inputMotion.split("");
+        String[] moves = inputCommand.split("");
         for (String move : moves) {
             if (move.equals("M")) {
                 moveForward.move(position);
@@ -47,6 +47,10 @@ public class Robot {
             }
         }
         return position.getFinalPositionResponse();
+    }
+
+    private boolean hasOnlyValidCommands(String inputMotion) {
+        return inputMotion.matches(VALID_COMMANDS_RULE);
     }
 
     public Space getPosition() {

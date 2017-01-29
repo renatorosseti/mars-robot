@@ -23,7 +23,7 @@ public class SpaceTest {
 
         boolean result = position.isPositionValid();
 
-        Assert.assertTrue("Should succeed when coordinateX and coordinateY are valid.",result);
+        Assert.assertTrue("Should succeed when coordinate X and coordinate Y are valid.",result);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class SpaceTest {
 
         boolean result = position.isPositionValid();
 
-        Assert.assertFalse("Should not succeed when coordinateX is greater than 4.",result);
+        Assert.assertFalse("Should not succeed when coordinate X is greater than 4.",result);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class SpaceTest {
 
         boolean result = position.isPositionValid();
 
-        Assert.assertFalse("Should not succeed when coordinateY is greater than 4.",result);
+        Assert.assertFalse("Should not succeed when coordinate Y is greater than 4.",result);
     }
 
     @Test
@@ -53,7 +53,7 @@ public class SpaceTest {
 
         boolean result = position.isPositionValid();
 
-        Assert.assertFalse("Should not succeed when coordinateX is smaller than 0.",result);
+        Assert.assertFalse("Should not succeed when coordinate X is smaller than 0.",result);
     }
 
     @Test
@@ -63,6 +63,6 @@ public class SpaceTest {
 
         boolean result = position.isPositionValid();
 
-        Assert.assertFalse("Should not succeed when coordinateY is smaller than 0.",result);
+        Assert.assertFalse("Should not succeed when coordinate Y is smaller than 0.",result);
     }
 }

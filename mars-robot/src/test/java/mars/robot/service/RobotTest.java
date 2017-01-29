@@ -32,8 +32,8 @@ public class RobotTest {
     @Test
     public void move_whenMoveToLeft() {
         robot.move("L");
-        Assert.assertEquals("Space X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
-        Assert.assertEquals("Space Y should be equal to 0.", 0 ,robot.getPosition().getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 0.", 0 ,robot.getPosition().getCoordinateY());
         Assert.assertEquals("Orientation should be equal to WEST.", WEST, robot.getPosition().getOrientation());
         Assert.assertEquals("Should return (0, 0, W) response.","(0, 0, W)",robot.getPosition().getFinalPositionResponse());
     }
@@ -41,8 +41,8 @@ public class RobotTest {
     @Test
     public void move_whenMoveTwoStepsAndMoveToRight() {
         robot.move("R");
-        Assert.assertEquals("Space X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
-        Assert.assertEquals("Space Y should be equal to 0.", 0 ,robot.getPosition().getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 0.", 0 ,robot.getPosition().getCoordinateY());
         Assert.assertEquals("Orientation should be equal to EAST.", EAST, robot.getPosition().getOrientation());
         Assert.assertEquals("Should return (0, 0, E) response.","(0, 0, E)",robot.getPosition().getFinalPositionResponse());
     }
@@ -50,8 +50,8 @@ public class RobotTest {
     @Test
     public void move_whenMoveThreeSteps() {
         robot.move("MMM");
-        Assert.assertEquals("Space X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
-        Assert.assertEquals("Space Y should be equal to 3.", 3 ,robot.getPosition().getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 0.", 0 ,robot.getPosition().getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 3.", 3 ,robot.getPosition().getCoordinateY());
         Assert.assertEquals("Orientation should be equal to NORTH.", NORTH, robot.getPosition().getOrientation());
         Assert.assertEquals("Should return (0, 3, N) response.","(0, 3, N)",robot.getPosition().getFinalPositionResponse());
     }

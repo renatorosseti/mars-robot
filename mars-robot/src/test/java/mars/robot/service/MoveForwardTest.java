@@ -27,8 +27,8 @@ public class MoveForwardTest {
     public void moveForward_whenCurrentOrientationIsNorth() {
         Space position = new Space();
         moveForward.move(position);
-        Assert.assertEquals("Space Y should be equal to 1.", 1 ,position.getCoordinateY());
-        Assert.assertEquals("Space X should be equal to 0.", 0 ,position.getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 1.", 1 ,position.getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 0.", 0 ,position.getCoordinateX());
         Assert.assertEquals("Orientation should be equal to NORTH. Should keep the same value.", Orientation.NORTH, position.getOrientation());
     }
 
@@ -37,8 +37,8 @@ public class MoveForwardTest {
         Space position = new Space();
         position.setOrientation(Orientation.WEST);
         moveForward.move(position);
-        Assert.assertEquals("Space Y should be equal to 0.", 0 ,position.getCoordinateY());
-        Assert.assertEquals("Space X should be equal to -1.", -1 ,position.getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 0.", 0 ,position.getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to -1.", -1 ,position.getCoordinateX());
         Assert.assertEquals("Orientation should be equal to WEST. Should keep the same value.", Orientation.WEST, position.getOrientation());
     }
 
@@ -47,8 +47,8 @@ public class MoveForwardTest {
         Space position = new Space();
         position.setOrientation(Orientation.SOUTH);
         moveForward.move(position);
-        Assert.assertEquals("Space Y should be equal to -1.", -1 ,position.getCoordinateY());
-        Assert.assertEquals("Space X should be equal to 0.", 0 ,position.getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to -1.", -1 ,position.getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 0.", 0 ,position.getCoordinateX());
         Assert.assertEquals("Orientation should be equal to SOUTH. Should keep the same value.", Orientation.SOUTH, position.getOrientation());
     }
 
@@ -57,8 +57,8 @@ public class MoveForwardTest {
         Space position = new Space();
         position.setOrientation(Orientation.EAST);
         moveForward.move(position);
-        Assert.assertEquals("Space Y should be equal to 0.", 0 ,position.getCoordinateY());
-        Assert.assertEquals("Space X should be equal to 1.", 1 ,position.getCoordinateX());
+        Assert.assertEquals("Coordinate Y should be equal to 0.", 0 ,position.getCoordinateY());
+        Assert.assertEquals("Coordinate X should be equal to 1.", 1 ,position.getCoordinateX());
         Assert.assertEquals("Orientation should be equal to EAST. Should keep the same value.", Orientation.EAST, position.getOrientation());
     }
 }
