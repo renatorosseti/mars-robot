@@ -9,45 +9,45 @@ import static mars.robot.entity.Orientation.*;
 
 @Repository
 public class Space {
-    private int spaceX;
-    private int spaceY;
+    private int coordinateX;
+    private int coordinateY;
     private Orientation orientation;
 
-    public static final int INITIAL_POSITION = 0;
-    public static final int FINAL_POSITION = 4;
+    public static final int MIN_COORDINATE = 0;
+    public static final int MAX_COORDINATE = 4;
 
     public Space() {
         init();
     }
 
     public void init() {
-        setSpaceX(0);
-        setSpaceY(0);
+        setCoordinateX(0);
+        setCoordinateY(0);
         setOrientation(NORTH);
     }
 
     public String getFinalPositionText() {
-        return  "(" +spaceX +", "+ spaceY +", " + orientation.getAcronym()+")";
+        return  "(" + coordinateX +", "+ coordinateY +", " + orientation.getAcronym()+")";
     }
 
     public boolean isPositionValid() {
-        return !((spaceX < INITIAL_POSITION || spaceX > FINAL_POSITION) || (spaceY < INITIAL_POSITION || spaceY > FINAL_POSITION));
+        return ((coordinateX >= MIN_COORDINATE && coordinateX <= MAX_COORDINATE) && (coordinateY >= MIN_COORDINATE && coordinateY <= MAX_COORDINATE));
     }
 
-    public int getSpaceX() {
-        return spaceX;
+    public int getCoordinateX() {
+        return coordinateX;
     }
 
-    public void setSpaceX(int spaceX) {
-        this.spaceX = spaceX;
+    public void setCoordinateX(int coordinateX) {
+        this.coordinateX = coordinateX;
     }
 
-    public int getSpaceY() {
-        return spaceY;
+    public int getCoordinateY() {
+        return coordinateY;
     }
 
-    public void setSpaceY(int spaceY) {
-        this.spaceY = spaceY;
+    public void setCoordinateY(int coordinateY) {
+        this.coordinateY = coordinateY;
     }
 
     public Orientation getOrientation() {

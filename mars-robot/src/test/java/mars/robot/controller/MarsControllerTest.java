@@ -45,7 +45,7 @@ public class MarsControllerTest {
         MvcResult result = mockMvc.perform(post("/rest/mars/MMRMMRMM")
                 .content("")
                 .contentType(contentType))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andReturn();
 
         String content = result.getResponse().getContentAsString();
@@ -57,7 +57,7 @@ public class MarsControllerTest {
         MvcResult result = mockMvc.perform(post("/rest/mars/MML")
                 .content("")
                 .contentType(contentType))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andReturn();
 
         String response1 = result.getResponse().getContentAsString();
@@ -66,7 +66,7 @@ public class MarsControllerTest {
         result = mockMvc.perform(post("/rest/mars/MML")
                 .content("")
                 .contentType(contentType))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andReturn();
 
         String response2 = result.getResponse().getContentAsString();
@@ -75,10 +75,10 @@ public class MarsControllerTest {
 
     @Test
     public void motionRobotSucceed_whenRobotRotatesToRightToBeBackToTheInitialPosition() throws Exception {
-        MvcResult result = mockMvc.perform(post("/rest/mars/MMRMMRMMRMMR")
+        MvcResult result = mockMvc.perform(post("/rest/mars/MMMMRMMMMRMMMMRMMMMR")
                 .content("")
                 .contentType(contentType))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andReturn();
 
         String content = result.getResponse().getContentAsString();
@@ -109,12 +109,12 @@ public class MarsControllerTest {
         Assert.assertEquals("400 Bad Request",content);
     }
 
+    /**
+     * When robot crosses the limited space and tries to move back to a valid position:
+     * The final position is valid, but first the robot had crossed the limited space and then an exception was thrown.
+     */
     @Test
-    public void robotExceptionHandled_whenRobotCrossesTheFinalPositionAndTriesToMoveBack() throws Exception {
-        /**
-         * When robot crosses the limited space and tries to move back to a valid position:
-         * The final position is valid, but first the robot crossed the limited space and then an exception was thrown.
-         */
+    public void robotExceptionHandled_whenRobotCrossesTheLimitedSpaceAndTriesToMoveBack() throws Exception {
 
         MvcResult result = mockMvc.perform(post("/rest/mars/MMMMMRRMM")
                 .content("")

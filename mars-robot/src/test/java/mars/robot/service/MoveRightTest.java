@@ -5,6 +5,7 @@ import mars.robot.entity.Space;
 import mars.robot.service.Motion;
 import mars.robot.service.MoveRight;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -13,10 +14,16 @@ import org.junit.Test;
 public class MoveRightTest {
 
     /**
-     Right motion tests.
+     * Right motion tests.
+     * All tests start the position with coordinateX = 0 and coordinateY = 0.
      */
 
-    private Motion moveRight = new MoveRight();
+    private Motion moveRight;
+
+    @Before
+    public void setup() {
+        this.moveRight = new MoveRight();
+    }
 
     @Test
     public void moveRight_whenCurrentOrientationIsNorth() {

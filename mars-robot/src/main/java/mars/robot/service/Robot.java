@@ -21,7 +21,7 @@ public class Robot {
     private MoveRight rotateRight;
 
     @Autowired
-    private MoveStraight moveStraight;
+    private MoveForward moveForward;
 
     private final String REGEX_RULE = "[MRL]+";
 
@@ -36,7 +36,7 @@ public class Robot {
         String[] moves = inputMotion.split("");
         for (String move : moves) {
             if (move.equals("M")) {
-                moveStraight.move(position);
+                moveForward.move(position);
                 if(!position.isPositionValid()) {
                     throw new RobotException("400 Bad Request");
                 }
@@ -57,8 +57,8 @@ public class Robot {
         this.position = position;
     }
 
-    public void setMoveStraight(MoveStraight moveStraight) {
-        this.moveStraight = moveStraight;
+    public void setMoveForward(MoveForward moveForward) {
+        this.moveForward = moveForward;
     }
 
     public void setRotateRight(MoveRight rotateRight) {

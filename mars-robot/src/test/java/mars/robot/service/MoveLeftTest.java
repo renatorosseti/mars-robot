@@ -3,6 +3,7 @@ package mars.robot.service;
 import mars.robot.entity.Orientation;
 import mars.robot.entity.Space;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -10,11 +11,17 @@ import org.junit.Test;
  */
 public class MoveLeftTest {
 
-    private Motion moveLeft = new MoveLeft();
-
     /**
-     Left motion tests.
+     * Left motion tests.
+     * All tests start the position with coordinateX = 0 and coordinateY = 0.
      */
+
+    private Motion moveLeft;
+
+    @Before
+    public void setup() {
+        this.moveLeft = new MoveLeft();
+    }
 
     @Test
     public void moveLeft_whenCurrentOrientationIsNorth() {

@@ -22,7 +22,7 @@ public class MarsController {
     @RequestMapping(value = "/rest/mars/{command}", method = RequestMethod.POST)
     public ResponseEntity<String> controlRobot(@PathVariable String command) throws RobotException {
         String response = robot.move(command);
-        return new ResponseEntity<String>(response, HttpStatus.CREATED);
+        return new ResponseEntity<String>(response, HttpStatus.OK);
     }
 
     @ExceptionHandler({RobotException.class})
