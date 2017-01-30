@@ -2,8 +2,6 @@ package mars.robot.service;
 
 import mars.robot.entity.Orientation;
 import mars.robot.entity.Space;
-import mars.robot.service.Motion;
-import mars.robot.service.MoveRight;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

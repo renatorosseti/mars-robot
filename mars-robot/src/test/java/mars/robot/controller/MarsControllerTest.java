@@ -41,7 +41,7 @@ public class MarsControllerTest {
     }
 
     @Test
-    public void motionRobotSucceed_whenRobotRotatesToRight() throws Exception {
+    public void motionRobotSucceed_whenRobotMovesForwardAndRotatesToRight() throws Exception {
         MvcResult result = mockMvc.perform(post("/rest/mars/MMRMMRMM")
                 .content("")
                 .contentType(contentType))
@@ -53,7 +53,7 @@ public class MarsControllerTest {
     }
 
     @Test
-    public void motionRobotSucceed_whenRobotMoveToLeftInTwoRequests() throws Exception {
+    public void motionRobotSucceed_whenRobotMovesForwardAndMoveToLeftInTwoRequests() throws Exception {
         MvcResult result = mockMvc.perform(post("/rest/mars/MML")
                 .content("")
                 .contentType(contentType))
@@ -74,7 +74,7 @@ public class MarsControllerTest {
     }
 
     @Test
-    public void motionRobotSucceed_whenRobotMovesRightAlongTheLimitedBordersToTheTheInitialPosition() throws Exception {
+    public void motionRobotSucceed_whenRobotMovesForwardAlongTheLimitedBordersAndMovesRightToTheTheInitialPosition() throws Exception {
         MvcResult result = mockMvc.perform(post("/rest/mars/MMMMRMMMMRMMMMRMMMMR")
                 .content("")
                 .contentType(contentType))
